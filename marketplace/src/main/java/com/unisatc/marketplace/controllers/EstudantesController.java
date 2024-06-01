@@ -10,7 +10,7 @@ import com.unisatc.marketplace.models.Estudantes;
 
 @RestController
 @RequestMapping("ajuda")
-public class EstudantesCOntroller {
+public class EstudantesController {
 
     @GetMapping
     public ResponseEntity<Estudantes> getAllEstudantes() {
