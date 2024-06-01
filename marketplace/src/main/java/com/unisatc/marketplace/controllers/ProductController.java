@@ -1,5 +1,7 @@
 package com.unisatc.marketplace.controllers;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -15,7 +17,9 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.unisatc.marketplace.dtos.ProductDTO;
+import com.unisatc.marketplace.models.Waste;
 import com.unisatc.marketplace.services.ProductService;
+import com.unisatc.marketplace.services.WasteService;
 
 import jakarta.validation.Valid;
 
@@ -24,6 +28,8 @@ import jakarta.validation.Valid;
 public class ProductController {
     @Autowired
     private ProductService productService;
+    @Autowired
+    private WasteService wasteService;
 
     @GetMapping
     public Page<ProductDTO> getProducts(Pageable pageable) {
@@ -49,5 +55,10 @@ public class ProductController {
     @DeleteMapping("{id}")
     public ProductDTO deleteProduto(@PathVariable Long id){
         return productService.deleteProduct(id);
+    }
+
+    @GetMapping("/waste")
+    public List<Waste> fetchWaste() {
+        return wasteService.fetchWaste();
     }
 }
