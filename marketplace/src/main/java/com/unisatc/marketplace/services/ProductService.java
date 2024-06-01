@@ -1,9 +1,10 @@
 package com.unisatc.marketplace.services;
 
-import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
@@ -25,11 +26,13 @@ public class ProductService {
         ProductEntity product = productRepository.save(productEntity);
         return productMapper.toDto(product);
     }
-    
-    public List<ProductDTO> getProducts(){
-        List<ProductEntity> products = productRepository.findAll();
-        if(products.isEmpty()) throw new ResponseStatusException(HttpStatus.NOT_FOUND,"Nenhum produto cadastrado no momento");
-        return products.stream().map(productMapper::toDto).toList();
+
+    public Page<ProductDTO> getProducts(Pageable pageable) {
+        Page<ProductEntity> products = productRepository.findAllProducts(pageable);
+        if (products.isEmpty()) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Nenhum produto cadastrado no momento");
+        }
+        return products.map(productMapper::toDto);
     }
    
     public ProductDTO getProduct(Long id) {
