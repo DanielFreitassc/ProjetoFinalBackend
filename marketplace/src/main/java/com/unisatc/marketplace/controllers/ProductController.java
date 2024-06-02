@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.unisatc.marketplace.dtos.ProductDTO;
-import com.unisatc.marketplace.models.Waste;
+import com.unisatc.marketplace.dtos.WasteResponse;
 import com.unisatc.marketplace.services.ProductService;
 import com.unisatc.marketplace.services.WasteService;
 
@@ -57,8 +57,8 @@ public class ProductController {
         return productService.deleteProduct(id);
     }
 
-    // @GetMapping("/waste")
-    // public List<Waste> fetchWaste() {
-    //     return wasteService.fetchWaste();
-    // }
+    @GetMapping("/waste")
+    public WasteResponse wasteSearch() {
+        return wasteService.wasteSearch();
+    }
 }
