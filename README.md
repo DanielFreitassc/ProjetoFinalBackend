@@ -217,3 +217,35 @@ OR
     "message": "Nenhum produto com este ID"
 }
 ```
+
+Buscar por desperdicio alimentar
+```json
+http://localhost:8080/products/waste
+```
+> Response (200)
+```json
+{
+    "foodType": "Milho",
+    "quantity": 58,
+    "date": "02/06/2024",
+    "alertMessage": "Quantidade de disperdicio do produto: Milho é alta. Data: 2024-06-02"
+}
+```
+OR
+> Response (403 Forbidden)
+---
+Mostrar integrantes do tabalho e tema
+```json
+http://localhost:8080/ajuda
+```
+> Response (200 OK)
+```json
+{
+    "estudantes": [
+        "Daniel Freitas",
+        "Geanlucca Zappe"
+    ],
+    "projeto": "Agricultura e Segurança Alimentar",
+    "tema": "Marketplace "
+}
+```
