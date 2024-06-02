@@ -1,11 +1,12 @@
 # Marketplace api documentação
 
-# BASE ULR API PRINCIPAL = http://localhost:8080
-# BASE ULR MICROSERVICE 1 = http://localhost:8081
-# BASE ULR MICROSERVICE 2 = http://localhost:8082
+# BASE URL API PRINCIPAL = http://localhost:8080
+# BASE URL MICROSERVICE 1 = http://localhost:8081
+# BASE URL MICROSERVICE 2 = http://localhost:8082
 
 
 Cadastro usuário
+
 POST
 ```json
 http://localhost:8080/auth/register
@@ -25,6 +26,7 @@ OR
 
 ---
 Login usuário
+
 POST
 ```json
 http://localhost:8080/auth/login
@@ -47,6 +49,7 @@ OR
 ---
 
 Cadastro de produto
+
 POST
 ```json
 http://localhost:8080/products
@@ -66,6 +69,7 @@ OR
 
 ---
 Buscar produtos
+
 GET
 ```json
 http://localhost:8080/products/products?page=0&size=2
@@ -127,13 +131,20 @@ OR
 
 ---
 Buscar produto por ID
+
 GET
 ```json
 http://localhost:8080/products/{id}
 ```
 > Response (200)
 ```json
-
+{
+    "id": 4,
+    "name": "Milho",
+    "price": 22.0,
+    "description": "Milho enlatado",
+    "validity": "02/02/2023"
+}
 ```
 OR
 > Response (404 Not Found)
@@ -143,9 +154,9 @@ OR
     "message": "Nenhum produto com este ID"
 }
 ```
-
 ---
 Atualizar produto por ID
+
 PUT
 ```json
 http://localhost:8080/products/{id}
