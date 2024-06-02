@@ -1,9 +1,7 @@
 package com.unisatc.marketplace.models;
 
 import java.time.LocalDate;
-
 import com.fasterxml.jackson.annotation.JsonFormat;
-
 import lombok.Data;
 
 @Data
