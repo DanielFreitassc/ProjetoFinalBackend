@@ -23,11 +23,6 @@ http://localhost:8080/auth/register
 > Response (201 Created)
 OR
 > Response (400 Bad request)
-```json
-{
-    "message": "Email ou senha incorreto, Tentativas restantes:  3"
-}
-```
 ---
 Login usuário
 
@@ -50,6 +45,11 @@ http://localhost:8080/auth/login
 ```
 OR
 > Response (401 Unauthorized)
+```json
+{
+    "message": "Email ou senha incorreto, Tentativas restantes:  3"
+}
+```
 ---
 
 Cadastro de produto
