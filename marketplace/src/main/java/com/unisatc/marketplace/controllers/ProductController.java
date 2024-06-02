@@ -57,8 +57,8 @@ public class ProductController {
         return productService.deleteProduct(id);
     }
 
-    @GetMapping("/waste")
-    public List<Waste> fetchWaste() {
-        return wasteService.fetchWaste();
-    }
+    // @GetMapping("/waste")
+    // public List<Waste> fetchWaste() {
+    //     return wasteService.fetchWaste();
+    // }
 }
