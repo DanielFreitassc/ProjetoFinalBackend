@@ -13,7 +13,8 @@ public class ProductMapper {
             productEntity.getName(),
             productEntity.getPrice(),
             productEntity.getDescription(),
-            productEntity.getValidity()
+            productEntity.getValidity(),
+            productEntity.getImage()
         ); 
     }
 
@@ -23,6 +24,7 @@ public class ProductMapper {
         .price(productDTO.price())
         .description(productDTO.description())
         .validity(productDTO.validity())
+        .image(productDTO.image())
         .build();
     }
 }

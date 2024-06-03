@@ -64,7 +64,8 @@ http://localhost:8080/products
     "name":"Milho",
     "price":22,
     "description":"Milho enlatado",
-    "validity":"02/02/2023"
+    "validity":"02/02/2023",
+    "image":"http://imagem.jpg"
 }
 ```
 > Response (201 Created)
@@ -102,14 +103,17 @@ http://localhost:8080/products/products?page=0&size=2
             "name": "Soja",
             "price": 12.0,
             "description": "Soja enlatada",
-            "validity": "02/02/2023"
+            "validity": "02/02/2023",
+            "image":"http://imagem.jpg"
         },
         {
             "id": 2,
             "name": "Milho",
             "price": 22.0,
             "description": "Milho enlatado",
-            "validity": "02/02/2023"
+            "validity": "02/02/2023",
+            "image":"http://imagem.jpg"
+            
         }
     ],
     "number": 0,
@@ -147,7 +151,8 @@ http://localhost:8080/products/{id}
     "name": "Milho",
     "price": 22.0,
     "description": "Milho enlatado",
-    "validity": "02/02/2023"
+    "validity": "02/02/2023",
+    "image":"http://imagem.jpg"
 }
 ```
 OR
@@ -171,7 +176,8 @@ http://localhost:8080/products/{id}
     "name":"Milho",
     "price":22,
     "description":"Milho enlatado",
-    "validity":"02/02/2023"
+    "validity":"02/02/2023",
+    "image":"http://imagem.jpg"
 }
 ```
 > Response (200)
@@ -181,7 +187,8 @@ http://localhost:8080/products/{id}
     "name": "Milho",
     "price": 22.0,
     "description": "Milho enlatado",
-    "validity": "02/02/2023"
+    "validity": "02/02/2023",
+    "image":"http://imagem.jpg"
 }
 ```
 OR
@@ -205,7 +212,8 @@ http://localhost:8080/products/{id}
     "name": "Milho",
     "price": 22.0,
     "description": "Milho enlatado",
-    "validity": "02/02/2023"
+    "validity": "02/02/2023",
+    "image":"http://imagem.jpg"
 }
 ```
 OR

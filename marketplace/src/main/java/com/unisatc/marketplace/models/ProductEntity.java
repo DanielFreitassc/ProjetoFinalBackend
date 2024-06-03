@@ -30,4 +30,5 @@ public class ProductEntity {
     private String description;
     @JsonFormat(pattern = "dd/MM/yyyy")
     private LocalDate validity;
+    private String image;
 }

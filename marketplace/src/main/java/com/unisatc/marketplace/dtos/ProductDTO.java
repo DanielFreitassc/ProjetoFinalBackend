@@ -17,7 +17,8 @@ public record ProductDTO(
     String description,
     @NotNull(message = "O campo validade não pode ser nulo")
     @JsonFormat(pattern = "dd/MM/yyyy")
-    LocalDate validity
+    LocalDate validity,
+    @NotBlank(message = "Imagem precisa ser preenchida") String image
 ) {
 
 }
