@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  marketplace-backend:
+    build: ./marketplace
+    ports:
+      - "8080:8080"
+    deploy:
+      replicas: 1
+
+  microservice-food-waste-backend:
+    build: ./microservice_food_waste
+    ports:
+      - "8081:8080"
+    deploy:
+      replicas: 1
