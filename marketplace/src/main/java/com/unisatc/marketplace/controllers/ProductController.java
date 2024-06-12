@@ -15,8 +15,10 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.unisatc.marketplace.dtos.ProductDTO;
+import com.unisatc.marketplace.dtos.SensorResponse;
 import com.unisatc.marketplace.dtos.WasteResponse;
 import com.unisatc.marketplace.services.ProductService;
+import com.unisatc.marketplace.services.SensorService;
 import com.unisatc.marketplace.services.WasteService;
 
 import jakarta.validation.Valid;
@@ -28,6 +30,9 @@ public class ProductController {
     private ProductService productService;
     @Autowired
     private WasteService wasteService;
+    @Autowired
+    private SensorService sensorService;
+
 
     @GetMapping
     public Page<ProductDTO> getProducts(Pageable pageable) {
@@ -58,5 +63,10 @@ public class ProductController {
     @GetMapping("/waste")
     public WasteResponse wasteSearch() {
         return wasteService.wasteSearch();
+    }
+
+    @GetMapping("/sensor")
+    public SensorResponse sensorSearch() {
+        return sensorService.sensorSearch();
     }
 }

@@ -19,7 +19,7 @@ services:
     networks:
       - my_network
 
-  microservice_sensor_plant:
+  microservice-sensor-plant:
     build: ./microservice_sensor_plant
     ports:
       - "8082:8082"

@@ -10,10 +10,10 @@ public class SensorService {
 
     public SensorData getSensorData() {
         return new SensorData(
-                getRandomNumberInRange(30, 100) + "%",  // umidade
-                getRandomNumberInRange(15, 40) + "°C",   // temperatura
+                getRandomNumberInRange(30, 100),  // umidade
+                getRandomNumberInRange(15, 40),   // temperatura
                 getRandomNumberInRange(500, 1000), // nivelDeLuzSolar
-                getRandomNumberInRange(10, 50) + "%"    // quantidadeDeAduboUsado
+                getRandomNumberInRange(10, 50)    // quantidadeDeAduboUsado
         );
     }
 
