@@ -260,7 +260,7 @@ http://localhost:8080/sensor
 }
 ```
 ---
-Dados que vem do sensor(Micro service 1)
+Dados que vem do sensor(Microservice 1)
 ```json
 http://localhost:8081/waste
 ```
@@ -273,7 +273,7 @@ http://localhost:8081/waste
 }
 ```
 ---
-Dados que vem do sensor(Micro service 2)
+Dados que vem do sensor(Microservice 2)
 ```json
 http://localhost:8082/sensor-data
 ```
