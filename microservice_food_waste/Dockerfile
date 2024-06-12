@@ -1,37 +1,15 @@
-# Etapa de build
-FROM openjdk:21-slim AS build
+FROM ubuntu:latest AS build
 
-# Instala Maven
-RUN apt-get update && apt-get install -y maven
+RUN apt-get update
+RUN apt-get install openjdk-21-jdk -y
+COPY . .
 
-# Define o diretório de trabalho
-WORKDIR /app
-
-# Copia o arquivo pom.xml e baixa as dependências
-COPY pom.xml .
-RUN mvn dependency:go-offline
-
-# Copia o restante do código fonte
-COPY src ./src
-
-# Compila o projeto
+RUN apt-get install maven -y
 RUN mvn clean install
 
-# Etapa final
-FROM alpine:edge
+FROM openjdk:21-jdk-slim 
+EXPOSE 8080
 
-# Instala OpenJDK 21
-RUN apk add --no-cache openjdk21-jdk
+COPY --from=build /target/*.jar app.jar
 
-# Define a variável de ambiente para o JDK
-ENV JAVA_HOME=/usr/lib/jvm/java-21-openjdk
-ENV PATH="$JAVA_HOME/bin:${PATH}"
-
-# Exposição da porta
-EXPOSE 8081
-
-# Copia o jar construído para a imagem final
-COPY --from=build /app/target/*.jar app.jar
-
-# Comando de inicialização
-ENTRYPOINT ["java", "-jar", "app.jar"]
+ENTRYPOINT [ "java", "-jar", "app.jar" ]

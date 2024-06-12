@@ -10,7 +10,7 @@ import com.unisatc.marketplace.dtos.WasteResponse;
 public class WasteService {
     public WasteResponse wasteSearch() {
         RestTemplate restTemplate = new RestTemplate();
-        ResponseEntity<WasteResponse> resp = restTemplate.getForEntity("http://localhost:8081/waste", WasteResponse.class);
+        ResponseEntity<WasteResponse> resp = restTemplate.getForEntity("http://microservice-food-waste-backend:8081/waste", WasteResponse.class);
         WasteResponse wasteResponse = resp.getBody();
 
         if (wasteResponse != null) {
