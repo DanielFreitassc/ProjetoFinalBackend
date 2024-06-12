@@ -20,9 +20,9 @@ http://localhost:8080/auth/register
     "role":"ADMIN"
 }
 ```
-> Response (201 Created)
+> Response (✅201 Created)
 OR
-> Response (400 Bad request)
+> Response (❌400 Bad request)
 ---
 Login usuário
 
@@ -37,14 +37,14 @@ http://localhost:8080/auth/login
     "password":"Aluno123456789"
 }
 ```
-> Response (200 OK)
+> Response (✅200 OK)
 ```json
 {
     "token": "eyJhbGciOi...."
 }
 ```
 OR
-> Response (401 Unauthorized)
+> Response (❌401 Unauthorized)
 ```json
 {
     "message": "Email ou senha incorreto, Tentativas restantes:  3"
@@ -68,9 +68,9 @@ http://localhost:8080/products
     "image":"http://imagem.jpg"
 }
 ```
-> Response (201 Created)
+> Response (✅201 Created)
 OR
-> Response (400 Bad Request)
+> Response (❌400 Bad Request)
 
 ---
 Buscar produtos
@@ -79,7 +79,7 @@ GET
 ```json
 http://localhost:8080/products/products?page=0&size=2
 ```
-> Response (200)
+> Response (✅200)
 ```json
 {
     "totalElements": 3,
@@ -129,7 +129,7 @@ http://localhost:8080/products/products?page=0&size=2
 }
 ```
 OR
-> Response (404 Not Found)
+> Response (❌404 Not Found)
 ```json
 {
     "status": "NOT_FOUND",
@@ -144,7 +144,7 @@ GET
 ```json
 http://localhost:8080/products/{id}
 ```
-> Response (200)
+> Response (✅200)
 ```json
 {
     "id": 4,
@@ -156,7 +156,7 @@ http://localhost:8080/products/{id}
 }
 ```
 OR
-> Response (404 Not Found)
+> Response (❌404 Not Found)
 ```json
 {
     "status": "NOT_FOUND",
@@ -180,7 +180,7 @@ http://localhost:8080/products/{id}
     "image":"http://imagem.jpg"
 }
 ```
-> Response (200)
+> Response (✅200)
 ```json
 {
     "id": 4,
@@ -192,7 +192,7 @@ http://localhost:8080/products/{id}
 }
 ```
 OR
-> Response (404 Not Found)
+> Response (❌404 Not Found)
 ```json
 {
     "status": "NOT_FOUND",
@@ -205,7 +205,7 @@ DELETE
 ```json
 http://localhost:8080/products/{id}
 ```
-> Response (200)
+> Response (✅200)
 ```json
 {
     "id": 2,
@@ -218,7 +218,7 @@ http://localhost:8080/products/{id}
 ```
 OR
 
-> Response (404 Not Found)
+> Response (❌404 Not Found)
 ```json
 {
     "status": "NOT_FOUND",
@@ -230,7 +230,7 @@ Buscar por desperdicio alimentar
 ```json
 http://localhost:8080/products/waste
 ```
-> Response (200)
+> Response (✅200)
 ```json
 {
     "foodType": "Milho",
@@ -240,13 +240,57 @@ http://localhost:8080/products/waste
 }
 ```
 OR
-> Response (403 Forbidden)
+> Response (❌403 Forbidden)
+---
+Busca informações nos sensores
+```json
+http://localhost:8080/sensor
+```
+> Response (✅200 OK)
+```json
+{
+    "umidade": "84.00%",
+    "temperatura": "19.10°C",
+    "nivelDeLuzSolar": "874.8",
+    "quantidadeDeAduboUsado": "38.90%",
+    "umidadeMensagem": "Umidade alta. Reduza a quantidade de água.",
+    "temperaturaMensagem": "Temperatura em nível adequado.",
+    "nivelDeLuzSolarMensagem": "Nível de luz solar em nível adequado.",
+    "quantidadeDeAduboUsadoMensagem": "Pouco adubo utilizado. Adicione mais adubo."
+}
+```
+---
+```json
+http://localhost:8081/waste
+```
+> Response (✅200 OK)
+```
+{
+    "foodType": "Milho",
+    "quantity": 97,
+    "date": "12/06/2024"
+}
+```
+---
+```json
+http://localhost:8082/sensor-data
+```
+> Response (✅200 OK)
+```
+{
+    "umidade": "42.3",
+    "temperatura": "37.2",
+    "nivelDeLuzSolar": "684.0",
+    "quantidadeDeAduboUsado": "45.9"
+}
+```
 ---
 Mostrar integrantes do tabalho e tema
 ```json
 http://localhost:8080/ajuda
 ```
-> Response (200 OK)
+
+> Response (✅200 OK)
 ```json
 {
     "estudantes": [
@@ -257,3 +301,5 @@ http://localhost:8080/ajuda
     "tema": "Marketplace "
 }
 ```
+
+
