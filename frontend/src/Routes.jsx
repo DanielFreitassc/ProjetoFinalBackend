@@ -4,6 +4,8 @@ import { Header } from "./components/Header";
 import { Products } from "./screens/Products";
 import { Waste } from "./screens/Waste";
 import { Sensor } from "./screens/Sensor";
+import { AuthProvider } from "./context/AuthProvider";
+import Login from "./screens/Login";
 
 export const AppRoutes = createBrowserRouter([
     {
@@ -37,5 +39,13 @@ export const AppRoutes = createBrowserRouter([
             <Header/>
             <Sensor/>
         </>
-    }
+    },
+    {
+      path:"/login",
+      element: (
+        <AuthProvider>
+          <Login/>
+        </AuthProvider>
+      )
+    },
 ])
