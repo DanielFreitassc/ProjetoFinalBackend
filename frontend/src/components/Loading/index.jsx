@@ -1,6 +1,9 @@
 import "./styles.css"
 export const Loading = () => {
     return(
+        <div id="alinhamento">
+
+
         <div aria-label="Orange and tan hamster running in a metal wheel" role="img" className="wheel-and-hamster">
         <div className="wheel"></div>
         <div className="hamster">
@@ -18,6 +21,7 @@ export const Loading = () => {
             </div>
         </div>
         <div className="spoke"></div>
+    </div>
     </div>
     )
 }
