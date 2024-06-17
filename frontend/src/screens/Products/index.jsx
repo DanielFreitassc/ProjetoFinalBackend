@@ -1,9 +1,8 @@
 
 import { privateAPi } from "../../services/privateApi";
-
 import { useEffect, useState } from "react";
 import TablePagination from "@mui/material/TablePagination";
-import { ContainerProducts } from "./styles";
+import Button, { ContainerProducts } from "./styles";
 import { TableContent, TableList } from "../../components/Table";
 import { Loading } from "../../components/Loading";
 

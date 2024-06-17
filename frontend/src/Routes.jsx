@@ -9,7 +9,7 @@ import Login from "./screens/Login";
 
 export const AppRoutes = createBrowserRouter([
     {
-        path:"/",
+        path:"/home",
         element: 
         <>
             <Header/>
@@ -41,7 +41,7 @@ export const AppRoutes = createBrowserRouter([
         </>
     },
     {
-      path:"/login",
+      path:"/",
       element: (
         <AuthProvider>
           <Login/>
