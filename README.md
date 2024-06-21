@@ -1,4 +1,7 @@
 # Marketplace api documentação
+## Fluxo da API
+![image](https://github.com/DanielFreitassc/ProjetoFinalBackend/assets/129224303/aba0f762-cae1-4559-a8d7-facc3026dcb0)
+
 
 ## Como executar aplicação? 
 Com seu serviço do docker rodando na sua maquina abra na pasta com o arquivo docker-compose.yml digite...
