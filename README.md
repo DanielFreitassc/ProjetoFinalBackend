@@ -1,14 +1,31 @@
 # Marketplace api documentação
 
-# BASE URL API PRINCIPAL = http://localhost:8080
-# BASE URL MICROSERVICE 1 = http://localhost:8081
-# BASE URL MICROSERVICE 2 = http://localhost:8082
-
+## Como executar aplicação? 
+Com seu serviço do docker rodando na sua maquina abra na pasta com o arquivo docker-compose.yml digite...
+```yml
+docker compose up -d
+```
+Apos a execução das 3 APIS abra um rest client de sua preferencia e defina a base URL da API principal.
+---
+URL API PRINCIPAL
+```yml 
+ http://localhost:8080
+```
+---
+BASE URL MICROSERVICE 1
+```yml 
+http://localhost:8081
+```
+--- 
+BASE URL MICROSERVICE 2
+```yml 
+http://localhost:8082
+````
 
 Cadastro usuário
 
 POST
-```json
+```yml
 http://localhost:8080/auth/register
 ```
 > Body Parameters
@@ -27,7 +44,7 @@ OR
 Login usuário
 
 POST
-```json
+```yml
 http://localhost:8080/auth/login
 ```
 > Body Parameters
@@ -38,14 +55,14 @@ http://localhost:8080/auth/login
 }
 ```
 > Response (✅200 OK)
-```json
+```yml
 {
     "token": "eyJhbGciOi...."
 }
 ```
 OR
 > Response (❌401 Unauthorized)
-```json
+```yml
 {
     "message": "Email ou senha incorreto, Tentativas restantes:  3"
 }
@@ -55,7 +72,7 @@ OR
 Cadastro de produto
 
 POST
-```json
+```yml
 http://localhost:8080/products
 ```
 > Body Parameters
@@ -76,7 +93,7 @@ OR
 Buscar produtos
 
 GET
-```json
+```yml
 http://localhost:8080/products/products?page=0&size=2
 ```
 > Response (✅200)
@@ -130,7 +147,7 @@ http://localhost:8080/products/products?page=0&size=2
 ```
 OR
 > Response (❌404 Not Found)
-```json
+```yml
 {
     "status": "NOT_FOUND",
     "message": "Nenhum produto cadastrado no momento"
@@ -141,7 +158,7 @@ OR
 Buscar produto por ID
 
 GET
-```json
+```yml
 http://localhost:8080/products/{id}
 ```
 > Response (✅200)
@@ -157,7 +174,7 @@ http://localhost:8080/products/{id}
 ```
 OR
 > Response (❌404 Not Found)
-```json
+```yml
 {
     "status": "NOT_FOUND",
     "message": "Nenhum produto com este ID"
@@ -167,7 +184,7 @@ OR
 Atualizar produto por ID
 
 PUT
-```json
+```yml
 http://localhost:8080/products/{id}
 ```
 > Body parameters
@@ -202,7 +219,7 @@ OR
 ---
 Remove produto por ID
 DELETE
-```json
+```yml
 http://localhost:8080/products/{id}
 ```
 > Response (✅200)
@@ -227,7 +244,7 @@ OR
 ```
 
 Buscar por desperdicio alimentar
-```json
+```yml
 http://localhost:8080/products/waste
 ```
 > Response (✅200)
@@ -243,7 +260,7 @@ OR
 > Response (❌403 Forbidden)
 ---
 Busca informações nos sensores
-```json
+```yml
 http://localhost:8080/sensor
 ```
 > Response (✅200 OK)
@@ -261,7 +278,7 @@ http://localhost:8080/sensor
 ```
 ---
 Dados que vem do sensor(Microservice 1)
-```json
+```yml
 http://localhost:8081/waste
 ```
 > Response (✅200 OK)
@@ -274,7 +291,7 @@ http://localhost:8081/waste
 ```
 ---
 Dados que vem do sensor(Microservice 2)
-```json
+```yml
 http://localhost:8082/sensor-data
 ```
 > Response (✅200 OK)
@@ -288,7 +305,7 @@ http://localhost:8082/sensor-data
 ```
 ---
 Mostrar integrantes do tabalho e tema
-```json
+```yml
 http://localhost:8080/ajuda
 ```
 
