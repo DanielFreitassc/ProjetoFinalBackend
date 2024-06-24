@@ -2,7 +2,7 @@
 ## Fluxo da API
 ![image](https://github.com/DanielFreitassc/ProjetoFinalBackend/assets/129224303/aba0f762-cae1-4559-a8d7-facc3026dcb0)
 
-## [slides](https://www.canva.com/design/DAGJE-BWorg/pfAeM6gVP69Udj26vuJ56w/edit?utm_content=DAGJE-BWorg&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
+## [Slides](https://www.canva.com/design/DAGJE-BWorg/pfAeM6gVP69Udj26vuJ56w/edit?utm_content=DAGJE-BWorg&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
 ## Como executar aplicação? 
 Com seu serviço do docker rodando na sua maquina abra na pasta com o arquivo docker-compose.yml digite...
 ```yml
