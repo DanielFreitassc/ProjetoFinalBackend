@@ -298,7 +298,7 @@ Dados que vem do sensor(Microservice 2)
 http://localhost:8082/sensor-data
 ```
 > Response (✅200 OK)
-```
+```json
 {
     "umidade": "42.3",
     "temperatura": "37.2",
