@@ -285,7 +285,7 @@ Dados que vem do sensor(Microservice 1)
 http://localhost:8081/waste
 ```
 > Response (✅200 OK)
-```
+```json
 {
     "foodType": "Milho",
     "quantity": 97,
